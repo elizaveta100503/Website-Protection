@@ -1,0 +1,76 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    h3 {
+      font-size: 24px;
+      margin: 0;
+      padding: 16px;
+    }
+    .spring {
+      font-family: Arial;
+      color: green;
+    }
+    .summer {
+      font-family: Times;
+      color: blue;
+    }
+    .autumn {
+      font-family: impact;
+      color: orange;
+    }
+    .winter {
+      font-family:  courier;
+      color: gray;
+    }
+    .error {
+      font-family: Times;
+      color: red;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function showSeason(month) {
+      var heading = document.createElement("h3");
+      if (month >= 1 && month <= 12) {
+        switch (month) {
+          case 3:
+          case 4:
+          case 5:
+            heading.className = "spring";
+            heading.textContent = "Весна";
+            break;
+          case 6:
+          case 7:
+          case 8:
+            heading.className = "summer";
+            heading.textContent = "Лето";
+            break;
+          case 9:
+          case 10:
+          case 11:
+            heading.className = "autumn";
+            heading.textContent = "Осень";
+            break;
+          default:
+            heading.className = "winter";
+            heading.textContent = "Зима";
+            break;
+        }
+      } else {
+        heading.className = "error";
+        heading.textContent = "Ошибка: введите номер месяца от 1 до 12";
+      }
+      document.body.appendChild(heading);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var month = prompt("Введите номер месяца:");
+      month = parseInt(month);
+      showSeason(month);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Season Comment</title>
+  <script>
+    function openWindow() {
+      var month = prompt("Введите номер месяца (от 1 до 12):");
+      var comment = "";
+      var color = "";
+      var font = "";
+
+      switch(month) {
+        case "1":
+        case "2":
+        case "12":
+          comment = "Зима";
+          color = "blue";
+          font = "Arial";
+          break;
+        case "3":
+        case "4":
+        case "5":
+          comment = "Весна";
+          color = "green";
+          font = "Times";
+          break;
+        case "6":
+        case "7":
+        case "8":
+          comment = "Лето";
+          color = "red";
+          font = "impact";
+          break;
+        case "9":
+        case "10":
+        case "11":
+          comment = "Осень";
+          color = "orange";
+          font = "courier";
+          break;
+        default:
+          comment = "Ошибка: введите число от 1 до 12";
+          color = "black";
+          font = "italic";
+          break;
+      }
+
+      var newWindow = window.open("", "", "width=200,height=200");
+      newWindow.document.write("<h3 style='color: " + color + "; font-family: " + font + ";'>" + comment + "</h3>");
+    }
+
+    function closeWindow() {
+      if (confirm("Вы уверены, что хотите закрыть окно?")) {
+        window.close();
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="openWindow()">Start</button>
+  <button onclick="closeWindow()">Close</button>
+</body>
+</html>
